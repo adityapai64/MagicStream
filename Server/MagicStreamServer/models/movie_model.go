@@ -10,7 +10,7 @@ import (
  */
 type Genre struct {
 	GenreID   int    `bson:"genre_id" json:"genre_id" validate:"required"`
-	GenreName string `bson:"genre_name" json:"genre_name" validate:"required, min=2, max=100"`
+	GenreName string `bson:"genre_name" json:"genre_name" validate:"required,min=2,max=100"`
 }
 
 type Ranking struct {
@@ -21,8 +21,8 @@ type Ranking struct {
 type Movie struct {
 	ID         bson.ObjectID `bson:"_id" json:"_id"`
 	ImdbID     string        `bson:"imdb_id" json:"imdb_id" validate:"required"`
-	Title      string        `bson:"title" json:"title" validate:"required, min=2, max=500"`
-	PosterPath string        `bson:"poster_path" json:"poster_path" validate:"required, url"`
+	Title      string        `bson:"title" json:"title" validate:"required,min=2,max=500"`
+	PosterPath string        `bson:"poster_path" json:"poster_path" validate:"required,url"`
 	YouTubeId  string        `bson:"youtube_id" json:"youtube_id" validate:"required"`
 	//The 'dive' keyword below makes sure that the validation is applied to every element of the array.
 	Genre       []Genre `bson:"genre" json:"genre" validate:"required,dive"`
